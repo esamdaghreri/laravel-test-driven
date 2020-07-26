@@ -8,12 +8,19 @@ use App\Book;
 class BooksController extends Controller
 {
     public function store(){
-        Book::create($this->validateRequest());
+        $book = Book::create($this->validateRequest());
+        return redirect($book->path());
     }
 
     public function update(Book $book){
         if($book->update($this->validateRequest())) {
-            return redirect('/');
+            return redirect($book->path());
+        }
+    }
+
+    public function destroy(Book $book){
+        if($book->delete()){
+            return redirect('/books');
         }
     }
 
