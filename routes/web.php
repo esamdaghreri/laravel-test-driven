@@ -17,7 +17,7 @@ Route::post('/books', 'BooksController@store')->name('books.store');
 Route::put('/books/{book}-{slut}', 'BooksController@update')->name('books.update');
 Route::delete('/books/{book}-{slut}', 'BooksController@destroy')->name('books.delete');
 
-Route::post('/author', 'AuthorsController@store')->name('author.store');
+Route::post('/authors', 'AuthorsController@store')->name('author.store');
 
 Route::post('/checkout/{book}', 'CheckoutBookController@store');
 Route::post('/checkin/{book}', 'CheckinBookController@store');
